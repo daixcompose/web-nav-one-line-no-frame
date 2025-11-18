@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      font-family: Impact, sans-serif;
+    }
+
+    /* LEFT-SKEWED TOPBAR, LEFT-ALIGNED, VERTICALLY CENTERED */
+    .topbar {
+      position: absolute;
+      top: 50%;
+      left: 0; /* align left */
+      transform: translateY(-50%) skewX(-10deg); /* vertical center + skew */
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+    }
+
+    /* NAV LINKS */
+    .topbar a.nav {
+      color: #272727;
+      text-decoration: none;
+      font-size: 24px; 
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      padding: 6px 10px;
+      white-space: nowrap;
+
+      /* SKEW BACK for readable text */
+      transform: skewX(10deg);
+    }
+
+    .topbar a.nav i {
+      color: #d40000 !important;
+      font-size: 28px !important;
+    }
+
+    .topbar a.nav::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: #d40000;
+      transition: width 0.25s ease;
+    }
+
+    .topbar a.nav:hover::after { width: 100%; }
+    .topbar a.nav:hover { color: #d40000; }
+
+    /* SOCIAL ICONS */
+    .topbar a.social {
+      color: #d40000 !important;
+      font-size: 22px;
+      text-decoration: none;
+      transform: skewX(10deg); 
+    }
+
+    /* EMAIL – MONO FONT */
+    .email {
+      font-family: "Courier New", monospace;
+      font-size: 16px; 
+      color: #d40000;
+      text-decoration: none;
+      white-space: nowrap;
+      transform: skewX(10deg);
+      margin-left: 10px;
+    }
+    .email:hover { color: #7a7a7a; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .topbar a.nav { font-size: 20px; padding: 5px 8px; }
+      .topbar a.nav i { font-size: 24px !important; }
+      .topbar a.social { font-size: 18px; }
+      .email { font-size: 14px; }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        gap: 8px;
+        padding: 4px 6px;
+      }
+      .topbar a.nav { font-size: 18px; padding: 3px 6px; }
+      .topbar a.nav i { font-size: 20px !important; }
+      .topbar a.social { font-size: 16px; }
+      .email { font-size: 12px; }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- LEFT-SKEWED TOPBAR -->
+  <div class="topbar">
+
+    <!-- NAV -->
+    <a id="home" class="nav" onclick="navigate(this.id)" href="#"><i class="fa-solid fa-house"></i>Home</a>
+    <a id="about" class="nav" onclick="navigate(this.id)" href="#"><i class="fa-solid fa-user"></i>About</a>
+    <a id="compositions" class="nav" onclick="navigate(this.id)" href="#"><i class="fa-solid fa-music"></i>Compositions</a>
+    <a id="blog" class="nav" onclick="navigate(this.id)" href="#"><i class="fa-solid fa-book"></i>Blog</a>
+    <a id="projects" class="nav" onclick="navigate(this.id)" href="#"><i class="fa-solid fa-flask"></i>Projects</a>
+    <a id="contact" class="nav" onclick="navigate(this.id)" href="#"><i class="fa-solid fa-pen-to-square"></i>Contact Form</a>
+
+    <!-- SOCIAL ICONS -->
+    <a href="https://instagram.com/daixcompose" target="_blank" class="social"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@daixcompose" target="_blank" class="social"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/@daixcompose" target="_blank" class="social"><i class="fab fa-youtube"></i></a>
+    <a href="https://facebook.com/daixuanai" target="_blank" class="social"><i class="fab fa-facebook"></i></a>
+
+    <!-- EMAIL -->
+    <a href="mailto:daix@daixcompose.com" class="email">daix@daixcompose.com</a>
+
+  </div>
+
+  <script>
+    function navigate(id) {
+      if (id === "home") window.open("https://daixcompose.com", "_blank");
+      if (id === "about") window.open("https://www.daixcompose.com/about-me?source=copy_link", "_blank");
+      if (id === "compositions") window.open("https://www.daixcompose.com/compositions?source=copy_link", "_blank");
+      if (id === "blog") window.open("https://www.daixcompose.com/blogs?source=copy_link", "_blank");
+      if (id === "projects") window.open("https://www.daixcompose.com/project?source=copy_link", "_blank");
+      if (id === "contact") window.open("https://www.notion.so/2900a93e481580748fb7ebd0a6248931?source=copy_link", "_blank");
+    }
+  </script>
+
+</body>
+</html>
